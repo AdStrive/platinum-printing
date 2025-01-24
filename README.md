@@ -1,3 +1,7 @@
+## Platinum Printing Solutions
+
+![Project Logo](public/logo/logo-full.png)
+
 ## Getting Started
 
 
