@@ -2,20 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+::-webkit-scrollbar {
+  display: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.page-min-h {
+  min-height: calc(100vh - 99px);
+}
+
+.menu {
+  font-size: 14px;
+
+  .active-link {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #b5ccf6;
+    display: block;
+    position: relative;
+    padding: 6px 0;
+    font-weight: 500;
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background: #fff;
+      background: #b5ccf6;
+    }
+  }
+
+  .menu-link {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    padding: 6px 0;
+    font-weight: 500;
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background: #fff;
+      transition: 0.5s transform ease;
+      transform: scale3d(0, 1, 1);
+      transform-origin: 0 50%;
+      background: #b5ccf6;
+      transform-origin: 100% 50%;
+    }
+
+    &:hover::before {
+      transform: scale3d(1, 1, 1);
+      transform-origin: 0 50%;
+    }
+  }
 }
