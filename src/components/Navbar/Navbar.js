@@ -13,27 +13,27 @@ const Navbar = () => {
   // Motions
   const mobLinkVariants = {
     open: {
-      x: 0,
+      
       opacity: 1,
     },
     closed: {
-      x: 20,
+      
       opacity: 0,
     },
   };
 
   const sidebarVariants = {
     open: {
-      y:10,
+      y: 200,
       transition: {
-        
+        duration: 0.3,
         stiffness: 20,
       },
     },
     closed: {
       y: -600,
       transition: {
-        
+        duration: 0.5,
         stiffness: 400,
         damping: 40,
       },
@@ -55,12 +55,12 @@ const Navbar = () => {
   };
 
   return (
-    <div className="relative bg-white w-full p-4">
+    <div className="relative bg-white w-full p-4 h-[80px] flex justify-center items-center">
       <div className="absolute left-0 top-0 h-full bg-white"></div>
       <div
         className={`${
           isMobileMenuOpen ? '' : 'rounded-bl-[20px]'
-        } absolute transition-all duration-300 right-0 top-0 h-full  bg-[#4d648e] lg:w-[60%] w-[50%]`}
+        } absolute transition-all duration-300 right-0 top-0 h-full  bg-[#4d648e] md:w-[60%] w-[50%]`}
       ></div>
       <nav className="relative container">
         <div className="container mx-auto flex justify-between items-center w-full">
@@ -81,13 +81,13 @@ const Navbar = () => {
           </motion.div>
 
           {/* Navbar Links (Hidden on small screens) */}
-          <motion.div className="menu md:flex hidden items-center justify-center gap-5 md:gap-14 lg:gap-24 w-[60%]">
+          <motion.div className="menu md:flex hidden items-center justify-center gap-5 md:gap-10 lg:gap-24 w-[60%]">
             <motion.a
               variants={desktopLinkVariants}
               initial="hidden"
               animate="visible"
               onClick={() => router.push('/')}
-              className={`block cursor-pointer transition-all duration-300 whitespace-nowrap
+              className={`block ml-6 cursor-pointer transition-all duration-300 whitespace-nowrap
                 ${isActive('/') ? 'active-link' : 'menu-link'}`}
             >
               Home
@@ -178,10 +178,11 @@ const Navbar = () => {
         variants={sidebarVariants}
         initial="closed"
         animate={isMobileMenuOpen ? 'open' : 'closed'}
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
         className="md:hidden absolute right-0"
       >
         <motion.div
-          className={`transition-all duration-700 ease-in-out transform flex flex-col items-center justify-center gap-6 w-[50vw] h-[32vh] rounded-bl-[20px] bg-[#4d648e] p-2 px-6`}
+          className={`transition-all duration-700 ease-in-out transform flex flex-col items-center justify-center gap-6 w-[50vw] h-[350px] rounded-bl-[20px] bg-[#4d648e] p-2 px-6 text-[14px]`}
         >
           <motion.a
             variants={mobLinkVariants}
@@ -192,9 +193,9 @@ const Navbar = () => {
               router.push('/');
               setMobileMenuOpen(!isMobileMenuOpen);
             }}
-            className={`block cursor-pointer transition-all duration-300 ${
+            className={`block cursor-pointer transition-all duration-300 uppercase w-full text-center ${
               isActive('/')
-                ? 'text-white bg-[#b5ccf6]/90 rounded-md w-full text-center p-2'
+                ? 'text-white bg-[#b5ccf6]/90 rounded-md text-center p-2'
                 : 'text-white hover:text-[#b5ccf6]'
             }`}
           >
@@ -209,9 +210,9 @@ const Navbar = () => {
               router.push('/products');
               setMobileMenuOpen(!isMobileMenuOpen);
             }}
-            className={`block cursor-pointer transition-all duration-300 ${
+            className={`block cursor-pointer transition-all duration-300 uppercase w-full text-center ${
               isActive('/products')
-                ? 'text-white bg-[#b5ccf6]/90 rounded-md w-full text-center p-2'
+                ? 'text-white bg-[#b5ccf6]/90 rounded-md text-center p-2'
                 : 'text-white hover:text-[#b5ccf6]'
             }`}
           >
@@ -227,9 +228,9 @@ const Navbar = () => {
               router.push('/about-us');
               setMobileMenuOpen(!isMobileMenuOpen);
             }}
-            className={`block cursor-pointer transition-all duration-300 ${
+            className={`block cursor-pointer transition-all duration-300 uppercase w-full text-center ${
               isActive('/about-us')
-                ? 'text-white bg-[#b5ccf6]/90 rounded-md w-full text-center p-2'
+                ? 'text-white bg-[#b5ccf6]/90 rounded-md p-2'
                 : 'text-white hover:text-[#b5ccf6]'
             }`}
           >
@@ -244,9 +245,9 @@ const Navbar = () => {
               router.push('/contact-us');
               setMobileMenuOpen(!isMobileMenuOpen);
             }}
-            className={`block cursor-pointer transition-all duration-300 ${
+            className={`block cursor-pointer transition-all duration-300 uppercase w-full text-center ${
               isActive('/contact-us')
-                ? 'text-white bg-[#b5ccf6]/90 rounded-md w-full text-center p-2'
+                ? 'text-white bg-[#b5ccf6]/90 rounded-md text-center p-2'
                 : 'text-white hover:text-[#b5ccf6]'
             }`}
           >

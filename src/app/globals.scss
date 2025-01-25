@@ -15,7 +15,7 @@ body {
 }
 
 .page-min-h {
-  min-height: calc(100vh - 99px);
+  min-height: calc(100vh - 80px);
 }
 
 .menu {
@@ -32,7 +32,7 @@ body {
 
     &::before {
       content: '';
-      width: 100%;
+      width: 70%;
       height: 2px;
       position: absolute;
       left: 0;
@@ -52,7 +52,7 @@ body {
 
     &::before {
       content: '';
-      width: 100%;
+      width: 70%;
       height: 2px;
       position: absolute;
       left: 0;

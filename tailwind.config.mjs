@@ -12,6 +12,7 @@ export default {
     extend: {
       colors: {
         background: '#ffffff',
+        primaryBtn: "#213c69",
       },
       fontFamily: {
         poppins: [`var(--font-poppins)`, 'sans-serif'],
