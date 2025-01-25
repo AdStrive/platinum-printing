@@ -5,13 +5,9 @@ export default function Home() {
   return (
     <>
       <div className="relative page-min-h w-full overflow-hidden">
-        <Image
-          className="absolute top-0 left-0 w-full h-full"
-          src="/samples/1.jpg"
-          alt="hero-image"
-          layout="fill"
-          objectFit="cover"
-        />
+        <div
+          className="absolute top-0 inset-0 w-full h-full bg-cover bg-fixed bg-center hero-img"
+        ></div>
         <div className="absolute w-full h-full bg-[#5490ff36]"></div>
         <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center">
           <Image
@@ -62,6 +58,7 @@ export default function Home() {
           />
         </div>
       </div>
+      <div className="relative page-min-h w-full overflow-hidden"></div>
     </>
   );
 }
