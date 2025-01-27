@@ -27,9 +27,11 @@ const AboutUs = () => {
         <div className="absolute top-10 inset-0 w-full h-full bg-cover bg-fixed bg-center about-us-img"></div>
         <div className="absolute bg-[#111111b6] top-10 left-0 w-full h-full">
           <div className="px-5 container h-full flex flex-col justify-center items-center">
-            <div className="h-[60%] lg:h-[40%] flex flex-col justify-between items-center gap-14">
-              <h2 className="text-5xl font-bold text-white/90">About Us</h2>
-              <p className="xl:text-xl text-lg font-medium text-white/75">
+            <div className="h-[60%] lg:h-[50%] flex flex-col justify-between items-center lg:gap-14 gap-10">
+              <h2 className="lg:text-5xl text-4xl font-bold text-white/90">
+                About Us
+              </h2>
+              <p className="xl:text-xl text-md font-medium text-white/75 text-justify">
                 At Platinum Company, we believe in delivering excellence that
                 shines as bright as our name. With a commitment to unmatched
                 quality and innovative solutions we strive to elevate industries
@@ -48,7 +50,9 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div className={`page-min-h relative flex items-center text-black overflow-hidden`}>
+      <div
+        className={`page-min-h relative flex items-center text-black overflow-hidden`}
+      >
         <div className="relative w-full container h-full overflow-hidden">
           {/* Slides */}
           <div
@@ -83,6 +87,6 @@ const AboutUs = () => {
       </div>
     </>
   );
-}
+};
 
 export default AboutUs;
