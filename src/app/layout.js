@@ -1,4 +1,4 @@
-import { Inter, Sora, Poppins } from 'next/font/google';
+import { Inter, Sora, Poppins, Bree_Serif, Inria_Serif } from 'next/font/google';
 import Navbar from '@/components/Navbar/Navbar';
 import './globals.scss';
 
@@ -20,6 +20,18 @@ const poppins = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
 });
 
+const breeSerif = Bree_Serif({
+  subsets: ['latin'],
+  weight: ['400'], 
+  variable: '--font-bree-serif',
+});
+
+const inriaSerif = Inria_Serif({
+  subsets: ['latin'],
+  weight: ['300', '400', '700'], // Choose available weights
+  variable: '--font-inria-serif',
+});
+
 export const metadata = {
   title: 'Platinum Printing Solutions',
   description: 'Website for platinum printing solutions.',
@@ -27,11 +39,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-transparent">
       <body
-        className={`relative flex flex-col justify-between ${inter.variable} font-inter`}
+        className={`relative flex flex-col justify-between bg-transparent ${inter.variable} font-inter ${poppins.variable} font-poppins ${breeSerif.variable} ${inriaSerif.variable}`}
       >
-        <div className="relative h-full">
+        <div className="relative h-full ">
           <div className="sticky top-0 z-50">
             <Navbar />
           </div>
