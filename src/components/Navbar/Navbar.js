@@ -7,7 +7,6 @@ const Navbar = () => {
   const router = useRouter();
   const pathname = usePathname();
   const isActive = (route) => pathname === route;
-
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Motions
@@ -55,34 +54,33 @@ const Navbar = () => {
   };
 
   return (
-    <div className="relative bg-white w-full p-4 h-[80px] flex justify-center items-center">
-      <div className="absolute left-0 top-0 h-full bg-white"></div>
+    <div className="absolute top-0 left-0 z-50 w-full h-[100px] flex justify-center items-center bg-transparent" >
+      
       <div
         className={`${
           isMobileMenuOpen ? '' : 'rounded-bl-[20px]'
-        } absolute transition-all duration-300 right-0 top-0 h-full  bg-[#4d648e] md:w-[60%] w-[50%]`}
+        } absolute transition-all duration-300 right-0 top-0 h-full  bg-[#0B2C63F0] md:w-[60%] w-[50%]`}
       ></div>
-      <nav className="relative container">
-        <div className="container mx-auto flex justify-between items-center w-full">
+      <nav className="relative container w-full px-4 bg-transparent">
+        <div className="flex justify-between items-center w-full">
           {/* Logo */}
           <motion.div
-            className="flex items-center w-[40%]"
+            className="flex items-center w-[40%] md:w-[35%] lg:w-[40%] "
             initial={{ opacity: 0, scale: 0.2 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
           >
             <a
               onClick={() => router.push('/')}
-              className="text-black cursor-pointer text-lg font-bold"
+              className="cursor-pointer w-full"
             >
-              {/* Need to replace */}
-              Platinum Printing Solutions Logo
+              <img src="/logo/main-logo.svg" alt="Company Logo" className="w-full max-w-[480px] h-auto mt-10" />
             </a>
           </motion.div>
 
           {/* Navbar Links (Hidden on small screens) */}
-          <motion.div className="menu md:flex hidden items-center justify-center gap-5 md:gap-10 lg:gap-24 w-[60%]">
-            <motion.a
+          <motion.div className="menu md:flex hidden items-center justify-center gap-5 md:gap-10 lg:gap-24 w-[80%]">
+            {/* <motion.a
               variants={desktopLinkVariants}
               initial="hidden"
               animate="visible"
@@ -91,13 +89,13 @@ const Navbar = () => {
                 ${isActive('/') ? 'active-link' : 'menu-link'}`}
             >
               Home
-            </motion.a>
+            </motion.a> */}
             <motion.a
               variants={desktopLinkVariants}
               initial="hidden"
               animate="visible"
               onClick={() => router.push('/products')}
-              className={`block cursor-pointer transition-all duration-300 whitespace-nowrap
+              className={`block cursor-pointer transition-all  duration-300 whitespace-nowrap
                 ${isActive('/products') ? 'active-link' : 'menu-link'}`}
             >
               Products
@@ -182,9 +180,9 @@ const Navbar = () => {
         className="md:hidden absolute right-0"
       >
         <motion.div
-          className={`transition-all duration-700 ease-in-out transform flex flex-col items-center justify-center gap-6 w-[50vw] h-[350px] rounded-bl-[20px] bg-[#4d648e] p-2 px-6 text-[14px]`}
+          className={`transition-all duration-700 ease-in-out transform flex flex-col items-center justify-center gap-6 w-[50vw] h-[350px] rounded-bl-[20px] bg-[#0B2C63F0] p-2 px-6 text-[14px]`}
         >
-          <motion.a
+          {/* <motion.a
             variants={mobLinkVariants}
             initial="closed"
             animate={isMobileMenuOpen ? 'open' : 'closed'}
@@ -200,7 +198,7 @@ const Navbar = () => {
             }`}
           >
             Home
-          </motion.a>
+          </motion.a> */}
           <motion.a
             variants={mobLinkVariants}
             initial="closed"

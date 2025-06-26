@@ -18,6 +18,8 @@ export default {
         poppins: [`var(--font-poppins)`, 'sans-serif'],
         sora: [`var(--font-sora)`, 'sans-serif'],
         inter: [`var(--font-inter)`, 'sans-serif'],
+        bree: ['var(--font-bree-serif)', 'serif'],
+        inria: ['var(--font-inria-serif)', 'serif'],
       },
     },
   },
